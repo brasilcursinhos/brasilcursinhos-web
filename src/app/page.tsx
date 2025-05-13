@@ -1,6 +1,7 @@
 import Carrosel from "@/components/Carrosel/Carrosel"
 import Cover from "@/components/Cover/Cover"
 import Navbar from "@/components/Navbar/Navbar"
+import Resultados from "@/components/Resultados/Resultados"
 
 export default function Home() {
   return (
@@ -8,7 +9,7 @@ export default function Home() {
      <Navbar/>
      <Cover/>
      <Carrosel/>
+     <Resultados/>
     </main>
-    
   )
 }
