@@ -38,17 +38,17 @@ export default function Carrosel() {
                     <ul className={`space-y-4`}>
                         <li className={`flex items-start gap-2 text-[#5F7691]`}>
                             <Image src={check} alt="check" className="object-contain" width={20} height={20} />
-                            <span>Somos uma organização sem fins lucrativos, de caráter socioeducativo;</span>
+                            <span>Somos uma organização sem fins lucrativos, de caráter<br/> socioeducativo;</span>
                         </li>
 
                         <li className={`flex items-start gap-2 text-[#5F7691]`}>
                             <Image src={check} alt="check" className="object-contain" width={20} height={20} />
-                            <span>Buscamos fortalecer os cursinhos populares do Brasil, oferecendo suporte, capacitações, mentorias, contato com parceiros e eventos com outros cursinhos populares;</span>
+                            <span>Buscamos fortalecer os cursinhos populares do Brasil,<br/> oferecendo suporte, capacitações, mentorias, contato com<br/> parceiros e eventos com outros cursinhos populares;</span>
                         </li>
 
                         <li className={`flex items-start gap-2 text-[#5F7691]`}>
                             <Image src={check} alt="check" className="object-contain" width={20} height={20} />
-                            <span>Nosso objetivo é alcançar uma educação superior cada vez mais plural, inclusiva e democrática.</span>
+                            <span>Nosso objetivo é alcançar uma educação superior cada vez<br/> mais plural, inclusiva e democrática.</span>
                         </li>
                     </ul>
                     <div className={`mt-6`}>
