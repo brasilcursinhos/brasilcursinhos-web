@@ -10,9 +10,8 @@ import Pessoa5 from "../Assets/images/pessoa5.svg"
 
 export default function Cover() {
   return (
+    <>
     <section className="flex items-center justify-center px-10 py-20 gap-20 bg-[#f2f9fb] overflow-hidden">
-      
-      {/* Mapa + Pessoas */}
       <div className="relative">
         <Image 
           src={MapaBrasil}
@@ -22,7 +21,6 @@ export default function Cover() {
           height={458.29}
         />
 
-        {/* Pessoas */}
         <div className="absolute top-6 left-16">
           <Image src={Pessoa1} alt="Pessoa 1" width={104.97} height={104.78} className="rounded-full" />
         </div>
@@ -44,17 +42,17 @@ export default function Cover() {
         </div>
       </div>
 
-      {/* Texto */}
       <div className="max-w-xl">
-        <h1 className="text-4xl font-bold text-gray-800 mb-4 leading-tight">
+        <h1 className="text-[#3D4C62] text-4xl font-bold mb-4 leading-tight">
           Nós representamos, <br />
           desenvolvemos e integramos <br />
           os cursinhos populares do país
         </h1>
-        <p className="text-[#109DAD] mt-4">
+        <p className="text-[#5F7691] mt-4">
           Trazemos soluções para fortalecer e potencializar o Movimento <br/> dos Cursinhos Populares em todo o Brasil e democratizar o<br/> acesso ao Ensino Superior.
         </p>
       </div>
     </section>
+    </>
   )
 }
