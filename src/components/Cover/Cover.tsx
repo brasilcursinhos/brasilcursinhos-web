@@ -1,12 +1,12 @@
 'use client'
 
 import Image from 'next/image'
-import MapaBrasil from "../Assets/images/mapa-brasil.svg"
-import Pessoa1 from "../Assets/images/pessoa1.svg"
-import Pessoa2 from "../Assets/images/pessoa2.svg"
-import Pessoa3 from "../Assets/images/pessoa3.svg"
-import Pessoa4 from "../Assets/images/pessoa4.svg"
-import Pessoa5 from "../Assets/images/pessoa5.svg"
+import MapaBrasil from "../Assets/imagens/mapaBrasil/mapa-brasil.svg"
+import Pessoa1 from "../Assets/imagens/mapaBrasil/pessoa1.svg"
+import Pessoa2 from "../Assets/imagens/mapaBrasil/pessoa2.svg"
+import Pessoa3 from "../Assets/imagens/mapaBrasil/pessoa3.svg"
+import Pessoa4 from "../Assets/imagens/mapaBrasil/pessoa4.svg"
+import Pessoa5 from "../Assets/imagens/mapaBrasil/pessoa5.svg"
 
 export default function Cover() {
   return (
