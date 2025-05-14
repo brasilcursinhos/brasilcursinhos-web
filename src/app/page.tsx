@@ -2,6 +2,7 @@ import Carrosel from "@/components/Carrosel/Carrosel"
 import Cover from "@/components/Cover/Cover"
 import Navbar from "@/components/Navbar/Navbar"
 import Resultados from "@/components/Resultados/Resultados"
+import Eventos from "@/components/Eventos/Eventos"
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
      <Cover/>
      <Carrosel/>
      <Resultados/>
+     <Eventos/>
     </main>
   )
 }
