@@ -1,7 +1,7 @@
 import Image from "next/image";
-import icone1 from "../Assets/images/ilustration_1.svg";
-import icone2 from "../Assets/images/ilustration_2.svg";
-import icone3 from "../Assets/images/ilustration_3.svg";
+import icone1 from "../Assets/imagens/resultados/ilustration_1.svg";
+import icone2 from "../Assets/imagens/resultados/ilustration_2.svg";
+import icone3 from "../Assets/imagens/resultados/ilustration_3.svg";
 
 export default function Resultados() {
   return (
