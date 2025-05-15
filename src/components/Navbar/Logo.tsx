@@ -1,6 +1,6 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import logotipo from "../Assets/images/logotipo.svg"
+import Image from 'next/image';
+import Link from 'next/link';
+import logotipo from "../Assets/imagens/navBar/logotipo.svg";
 
 
 export default function Logo() {
