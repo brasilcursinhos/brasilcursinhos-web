@@ -10,28 +10,53 @@ import cats_logo from "../Assets/imagens/nossa-rede/cats_logo.svg";
 import each_usp_logo from "../Assets/imagens/nossa-rede/each_usp_logo.svg";
 import garra_logo from "../Assets/imagens/nossa-rede/garra_logo.svg";
 import iny_logo from "../Assets/imagens/nossa-rede/iny_vestibulares_logo.svg";
+import feap_usp_logo from "../Assets/imagens/nossa-rede/fea_usp_logo.svg";
+import casd_logo from "../Assets/imagens/nossa-rede/casd_logo.svg";
+import cursinho_pes_logo from "../Assets/imagens/nossa-rede/cursinho_pes_logo.svg";
+import einstein_floripa_logo from "../Assets/imagens/nossa-rede/einstein_floripa_logo.svg";
+import marie_curie_vestibulares_logo from "../Assets/imagens/nossa-rede/marie_curie_vestibulares_logo.svg"
+
+
 import { useState } from "react";
 
-export default function NossaRede() {
+const logos = [
+    galt_logo, 
+    cursinho_popular, 
+    nubo, med_aprova, 
+    cats_logo, 
+    each_usp_logo, 
+    garra_logo, 
+    iny_logo, 
+    feap_usp_logo, 
+    casd_logo, 
+    cursinho_pes_logo, 
+    einstein_floripa_logo, 
+    marie_curie_vestibulares_logo
+];
+    
+const logosPorPagina = 4;
 
-    const logos = [galt_logo, cursinho_popular, nubo, med_aprova, cats_logo, each_usp_logo, garra_logo, iny_logo];
-    const logosPorPagina = 4;
+export default function NossaRede() {
     const totalPaginas = Math.ceil(logos.length / logosPorPagina);
     const [paginaAtual, setPaginaAtual] = useState(0);
-
-
-    const proximaPagina = () => {
-        setPaginaAtual((paginaAtual + 1) % totalPaginas);
-    }
-
-    const paginaAnterior = () => {
-        setPaginaAtual((paginaAtual - 1 + totalPaginas) % totalPaginas);
-    }
 
     const logosVisiveis = logos.slice(
         paginaAtual * logosPorPagina,
         paginaAtual * logosPorPagina + logosPorPagina
     );
+
+      const paginaAnterior = () => {
+        if (paginaAtual > 0){
+            setPaginaAtual(paginaAtual - 1);
+        }
+    }
+
+    const proximaPagina = () => {
+        if (paginaAtual < totalPaginas -1){
+            setPaginaAtual(paginaAtual + 1);  
+        }
+        
+    }
 
     return (
         <section className="px-6 py-10 bg-white">
@@ -59,7 +84,7 @@ export default function NossaRede() {
                                 alt={`Logo ${index}`}
                                 width={120}
                                 height={60}
-                                className="object-contain m b-10"
+                                className="object-contain mb-10"
                             />
                         </div>
                     ))}
@@ -72,6 +97,7 @@ export default function NossaRede() {
                     <button
                         onClick={paginaAnterior}
                         className="w-8 h-8 flex items-center justify-center rounded-full bg-white border border-[#ccc] text-black cursor-pointer"
+                        disabled={paginaAtual === 0}
                     >
                         {"<"}
                     </button>
@@ -79,6 +105,7 @@ export default function NossaRede() {
                     <button
                         onClick={proximaPagina}
                         className="w-8 h-8 flex items-center justify-center rounded-full bg-[#109DAD] text-white cursor-pointer"
+                        disabled={paginaAtual === totalPaginas - 1}
                     >
                         {">"}
                     </button>
