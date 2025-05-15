@@ -2,12 +2,12 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import check from "../Assets/images/check.svg";
-import union from "../Assets/images/union.svg";
-import union2 from "../Assets/images/union2.svg";
-import union3 from "../Assets/images/union3.svg";
-import union4 from "../Assets/images/union4.svg";
-import image_carrosel from "../Assets/images/image_carrosel.svg";
+import check from "../Assets/imagens/carrosel/check.svg";
+import union from "../Assets/imagens/carrosel/union.svg";
+import union2 from "../Assets/imagens/carrosel/union2.svg";
+import union3 from "../Assets/imagens/carrosel/union3.svg";
+import union4 from "../Assets/imagens/carrosel/union4.svg";
+import image_carrosel from "../Assets/imagens/carrosel/image_carrosel.svg";
 import { useState } from "react";
 
 export default function Carrosel() {
