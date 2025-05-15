@@ -1,7 +1,7 @@
-import Image from "next/image"
-import icone1 from "../Assets/images/mentorias.svg"
-import icone2 from "../Assets/images/capacitacoes.svg"
-import check from "../Assets/images/check.svg"
+import Image from "next/image";
+import icone1 from "../Assets/imagens/mentorias-capacitacoes/mentorias.svg";
+import icone2 from "../Assets/imagens/mentorias-capacitacoes/capacitacoes.svg";
+import check from "../Assets/imagens/mentorias-capacitacoes/check.svg";
 
 export default function MentoriasCapacitacoes() {
   return (

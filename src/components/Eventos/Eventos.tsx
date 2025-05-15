@@ -1,8 +1,8 @@
-import Image from "next/image"
-import Evento1 from "../Assets/images/evento1.svg"
-import Evento2 from "../Assets/images/evento2.svg"
-import Evento3 from "../Assets/images/evento3.svg"
-import Evento4 from "../Assets/images/evento4.svg"
+import Image from "next/image";
+import Evento1 from "../Assets/imagens/eventos/evento1.svg";
+import Evento2 from "../Assets/imagens/eventos/evento2.svg";
+import Evento3 from "../Assets/imagens/eventos/evento3.svg";
+import Evento4 from "../Assets/imagens/eventos/evento4.svg";
 
 const eventos = [
   {
