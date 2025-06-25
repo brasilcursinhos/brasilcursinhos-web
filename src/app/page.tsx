@@ -1,4 +1,4 @@
-import Carrosel from "@/components/Carrosel/Carrosel"
+import Carrosel from "@/components/Carrossel/Carrosel"
 import Cover from "@/components/Cover/Cover"
 import Navbar from "@/components/Navbar/Navbar"
 import Resultados from "@/components/Resultados/Resultados"
