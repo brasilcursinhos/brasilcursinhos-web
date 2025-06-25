@@ -76,7 +76,7 @@ export default function NossaRede() {
                     </div>
                 </div>
 
-                <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center mb-6">
+                <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center mb-7 mt-12">
                     {logosVisiveis.map((logo, index) => (
                         <div key={index} className="flex items-center justify-center h-20">
                             <Image
