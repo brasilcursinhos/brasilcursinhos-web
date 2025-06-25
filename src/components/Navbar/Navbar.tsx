@@ -28,7 +28,7 @@ export default function Navbar() {
         <li className="relative">
           <button
             onClick={() => toggleDropdown('oferecemos')}
-            className="hover:text-[#109DAD] transition-colors flex items-center gap-1"
+            className="hover:text-[#109DAD] transition-colors flex items-center gap-1 cursor-pointer"
           >
             O que oferecemos
             <svg className="w-4 h-4 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -57,7 +57,7 @@ export default function Navbar() {
         <li className="relative" >
           <button
             onClick={() => toggleDropdown('faca-parte')}
-            className="hover:text-[#109DAD] transition-colors flex items-center gap-1"
+            className="hover:text-[#109DAD] transition-colors flex items-center gap-1 cursor-pointer"
           >
             Faça parte
             <svg className="w-4 h-4 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
