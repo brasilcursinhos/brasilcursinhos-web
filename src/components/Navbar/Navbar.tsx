@@ -3,80 +3,88 @@
 import Logo from './Logo';
 import Link from 'next/link';
 import { useState } from 'react';
+import {
+  Menubar,
+  MenubarContent,
+  MenubarItem,
+  MenubarMenu,
+  MenubarTrigger,
+} from "@/components/ui/menubar";
 
+interface NavbarProps {
+  paginaAtiva?: string;
+}
 
+export default function Navbar({ paginaAtiva }: NavbarProps) {
 
-export default function Navbar() {
-    const [openDropdown, setOpenDropdown] = useState<string | null>(null)
-
-    const toggleDropdown = (menu: string) => {
-        setOpenDropdown(prev => (prev === menu ? null : menu))
+  const quemSomosClasses = `
+      hover:text-[#109DAD]
+      transition-colors
+      pb-1 /* Adiciona um pouco de espaço para a borda não ficar colada */
+      ${paginaAtiva === 'quem-somos'
+      ? `
+            text-[#109DAD] font-bold
+            relative border-[#109DAD]
+            after:content-['']
+            after:absolute
+            after:left-1/2
+            after:-translate-x-1/2
+            after:bottom-[-1px] /* Posiciona sobre a borda pontilhada */
+            after:h-[2px] /* Espessura da linha sólida */
+            after:w-[40%]   /* Largura da linha sólida (ajuste conforme o gosto) */
+            after:bg-[#109DAD]
+          `
+      : ''
     }
+    `;
 
   return (
-    <nav className="flex items-center justify-between p-4 shadow-md">
+    <nav className="flex items-center justify-between p-4 bg-[#EEF9FA]">
       <Logo />
 
-      <ul className="flex items-center px-20 gap-10 text-gray-700">
-        <li>
-          <Link href="/QuemSomos" className="hover:text-[#109DAD] transition-colors">
-            Quem somos
-          </Link>
-        </li>
+      <Menubar className="flex items-center px-20 gap-10 text-gray-700 bg-transparent border-none shadow-none">
+        <Link href="/QuemSomos" className={quemSomosClasses}>
+          Quem somos
+        </Link>
 
-
-        <li className="relative">
-          <button
-            onClick={() => toggleDropdown('oferecemos')}
-            className="hover:text-[#109DAD] transition-colors flex items-center gap-1 cursor-pointer"
-          >
+        <MenubarMenu>
+          <MenubarTrigger className="hover:text-[#109DAD] transition-colors flex items-center gap-1 cursor-pointer data-[state=open]:text-[#109DAD]">
             O que oferecemos
             <svg className="w-4 h-4 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
             </svg>
-          </button>
+          </MenubarTrigger>
+          <MenubarContent className="bg-[#EEF9FA] border-none shadow-lg min-w-[12rem]">
+            <MenubarItem asChild>
+              <Link href="/Eventos" className="px-4 py-2 hover:bg-gray-100">Eventos</Link>
+            </MenubarItem>
+            <MenubarItem asChild>
+              <Link href="/Mentorias" className="px-4 py-2 hover:bg-gray-100">Mentorias e capacitações</Link>
+            </MenubarItem>
+          </MenubarContent>
+        </MenubarMenu>
 
-          {openDropdown === 'oferecemos' && (
-            <div className="absolute top-10 left-0 w-48 bg-white shadow-lg rounded-md p-2 z-10">
-              <Link href="/Eventos" className="block px-4 py-2 hover:bg-gray-100 rounded-md">
-                Eventos
-              </Link>
-              <Link href="/Mentorias" className="block px-4 py-2 hover:bg-gray-100 rounded-md">
-                Mentorias e capacitações
-              </Link>              
-            </div>
-          )}
-        </li>
+        <Link href="/Rede" className="hover:text-[#109DAD] transition-colors">
+          Nossa rede
+        </Link>
 
-
-        <li>
-          <Link href="/Rede" className="hover:text-[#109DAD] transition-colors">
-            Nossa rede
-          </Link>
-        </li>
-        <li className="relative" >
-          <button
-            onClick={() => toggleDropdown('faca-parte')}
-            className="hover:text-[#109DAD] transition-colors flex items-center gap-1 cursor-pointer"
-          >
+        <MenubarMenu>
+          <MenubarTrigger className="hover:text-[#109DAD] transition-colors flex items-center gap-1 cursor-pointer data-[state=open]:text-[#109DAD]">
             Faça parte
             <svg className="w-4 h-4 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
             </svg>
-          </button>
-
-          {openDropdown === 'faca-parte' && (
-            <div className="absolute top-10 right-0 w-48 bg-white shadow-lg rounded-md p-2 z-10">
-              <Link href="/processo-filiacao" className="block px-4 py-2 hover:bg-gray-100 rounded-md">
-                Processo de filiação
-              </Link>
-              <Link href="/processo-voluntariado" className="block px-4 py-2 hover:bg-gray-100 rounded-md">
-                Processo de voluntariado 
-              </Link>
-            </div>
-          )}
-        </li>
-      </ul>
+          </MenubarTrigger>
+          <MenubarContent className="bg-[#EEF9FA] border-none shadow-lg min-w-[12rem]">
+            <MenubarItem asChild>
+              <Link href="/processo-filiacao" className="cursor-pointer">Processo de filiação</Link>
+            </MenubarItem>
+            <MenubarItem asChild>
+              <Link href="/processo-voluntariado" className="cursor-pointer">Processo de voluntariado</Link>
+            </MenubarItem>
+          </MenubarContent>
+        </MenubarMenu>
+      </Menubar>
     </nav>
   )
 }
