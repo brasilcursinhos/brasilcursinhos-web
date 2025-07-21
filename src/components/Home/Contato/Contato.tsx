@@ -1,9 +1,8 @@
 'use client'
 
 import Image from 'next/image'
-import React from 'react'
-import Contato_image from "@/components/Assets/imagens/contato/contato.svg"
-import Sucesso from "@/components/Assets/imagens/contato/sucesso.svg"
+import Contato_image from "../Assets/imagens/contato/contato.svg"
+import Sucesso from "../Assets/imagens/contato/sucesso.svg"
 
 import {
   AlertDialog,
@@ -18,19 +17,17 @@ import {
 import { useState } from 'react'
 
 export default function Contato() {
-  const [nome, setNome] = useState('');
-  const [email, setEmail] = useState('');
-  const [mensagem, setMensagem] = useState('');
+  const [form, setForm] = useState({ nome: '', email: '', mensagem: '' });
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
-  }
+  };
   const handleSendAnotherMessage = () => {
-    setNome('');
-    setEmail('');
-    setMensagem('');
-    window.location.reload();
-  }
-    const isFormValid = nome.trim() !== '' && email.trim() !== '' && mensagem.trim() !== '';
+    setForm({ nome: '', email: '', mensagem: '' });
+  };
+  const isFormValid = form.nome.trim() !== '' && form.email.trim() !== '' && form.mensagem.trim() !== '';
 
 
   return (
@@ -50,46 +47,57 @@ export default function Contato() {
 
         <AlertDialog>
           <form className="space-y-5" onSubmit={handleSubmit}>
-            <div>
-              <label className="block text-sm font-semibold text-[#5F7691] mb-1">
-                Seu nome<span className="text-[#E16919]">*</span>
-              </label>
-              <input
-                type="text"
-                className="w-full px-4 py-2 bg-transparent border border-gray-600 rounded-md focus:outline-none focus:border-teal-400"
-                placeholder="Digite seu nome"
-                required
-                value={nome}
-                onChange={(e) => setNome(e.target.value)}
-              />
-            </div>
-
-            <div>
-              <label className="block text-sm font-semibold text-[#5F7691] mb-1">
-                Seu e-mail<span className="text-[#E16919]">*</span>
-              </label>
-              <input
-                type="email"
-                className="w-full px-4 py-2 bg-transparent border border-gray-600 rounded-md focus:outline-none focus:border-teal-400"
-                placeholder="Digite seu e-mail"
-                required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-            </div>
-
-            <div>
-              <label className="block text-sm font-semibold text-[#5F7691] mb-1">
-                Sua mensagem<span className="text-[#E16919]">*</span>
-              </label>
-              <textarea
-                className="w-full h-40 px-4 py-2 bg-transparent border border-gray-600 rounded-md resize-none focus:outline-none focus:border-teal-400"
-                placeholder="Escreva sua mensagem"
-                required
-                value={mensagem}
-                onChange={(e) => setMensagem(e.target.value)}
-              />
-            </div>
+            {[
+              {
+                label: 'Seu nome',
+                name: 'nome',
+                type: 'text',
+                placeholder: 'Digite seu nome',
+                required: true,
+                as: 'input',
+              },
+              {
+                label: 'Seu e-mail',
+                name: 'email',
+                type: 'email',
+                placeholder: 'Digite seu e-mail',
+                required: true,
+                as: 'input',
+              },
+              {
+                label: 'Sua mensagem',
+                name: 'mensagem',
+                placeholder: 'Escreva sua mensagem',
+                required: true,
+                as: 'textarea',
+              },
+            ].map((field, idx) => (
+              <div key={field.name}>
+                <label className="block text-sm font-semibold text-[#5F7691] mb-1">
+                  {field.label}<span className="text-[#E16919]">*</span>
+                </label>
+                {field.as === 'input' ? (
+                  <input
+                    type={field.type}
+                    name={field.name}
+                    className="w-full px-4 py-2 bg-transparent border border-gray-600 rounded-md focus:outline-none focus:border-teal-400"
+                    placeholder={field.placeholder}
+                    required={field.required}
+                    value={form[field.name as keyof typeof form]}
+                    onChange={handleChange}
+                  />
+                ) : (
+                  <textarea
+                    name={field.name}
+                    className="w-full h-40 px-4 py-2 bg-transparent border border-gray-600 rounded-md resize-none focus:outline-none focus:border-teal-400"
+                    placeholder={field.placeholder}
+                    required={field.required}
+                    value={form[field.name as keyof typeof form]}
+                    onChange={handleChange}
+                  />
+                )}
+              </div>
+            ))}
             <AlertDialogTrigger asChild disabled={!isFormValid}>
               <button className="bg-[#109DAD] text-[#FFFFFF] px-6 py-3 rounded-xl text-sm font-semibold cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed">
                 Enviar Mensagem
