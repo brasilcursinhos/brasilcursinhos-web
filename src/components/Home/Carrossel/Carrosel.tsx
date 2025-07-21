@@ -52,17 +52,17 @@ export default function Carrosel() {
                     <ul className={`space-y-4`}>
                         <li className={`flex items-start gap-2 text-[#5F7691]`}>
                             <Image src={check} alt="check" className="object-contain" width={20} height={20} />
-                            <span>Somos uma organização sem fins lucrativos, de caráter<br /> socioeducativo;</span>
+                            <span>Somos uma organização sem fins lucrativos, de caráter socioeducativo;</span>
                         </li>
 
                         <li className={`flex items-start gap-2 text-[#5F7691]`}>
                             <Image src={check} alt="check" className="object-contain" width={20} height={20} />
-                            <span>Buscamos fortalecer os cursinhos populares do Brasil,<br /> oferecendo suporte, capacitações, mentorias, contato com<br /> parceiros e eventos com outros cursinhos populares;</span>
+                            <span>Buscamos fortalecer os cursinhos populares do Brasil, oferecendo suporte, capacitações, mentorias, contato com parceiros e eventos com outros cursinhos populares;</span>
                         </li>
 
                         <li className={`flex items-start gap-2 text-[#5F7691]`}>
                             <Image src={check} alt="check" className="object-contain" width={20} height={20} />
-                            <span>Nosso objetivo é alcançar uma educação superior cada vez<br /> mais plural, inclusiva e democrática.</span>
+                            <span>Nosso objetivo é alcançar uma educação superior cada vez mais plural, inclusiva e democrática.</span>
                         </li>
                     </ul>
                     <div className={`mt-6`}>
@@ -78,13 +78,13 @@ export default function Carrosel() {
                     <div className="flex flex-col items-center">
                         <Carousel
                             setApi={setApi}
-                            className="w-[500px]"
+                            className="w-full max-w-xs sm:max-w-md"
                             opts={{ loop: true }}
                         >
                             <CarouselContent>
                                 {imagens.map((img, index) => (
                                     <CarouselItem key={index}>
-                                        <div className="relative w-[500px] h-[350px]">
+                                        <div className="relative w-full aspect-[4/3]">
                                             <Image
                                                 src={img}
                                                 alt={`Imagem ${index + 1}`}
