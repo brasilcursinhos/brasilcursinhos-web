@@ -1,21 +1,33 @@
-import Carrosel from "@/components/Carrosel/Carrosel"
-import Cover from "@/components/Cover/Cover"
-import Navbar from "@/components/Navbar/Navbar"
-import Resultados from "@/components/Resultados/Resultados"
-import Eventos from "@/components/Eventos/Eventos"
-import MentoriasCapacitacoes from "@/components/MentoriasCapacitacoes/MentoriasCapacitacoes"
-import NossaRede from "@/components/NossaRede/NossaRede"
+import Carrosel from "@/components/Home/Carrossel/Carrosel"
+import Cover from "@/components/Home/Cover/Cover"
+import Navbar from "@/components/Home/Navbar/Navbar"
+import Resultados from "@/components/Home/Resultados/Resultados"
+import Eventos from "@/components/Home/Eventos/Eventos"
+import MentoriasCapacitacoes from "@/components/Home/MentoriasCapacitacoes/MentoriasCapacitacoes"
+import NossaRede from "@/components/Home/NossaRede/NossaRede"
+import Depoimentos from "@/components/Home/Depoimentos/Depoimentos"
+import Contato from "@/components/Home/Contato/Contato"
+import Footer from "@/components/Home/Footer/Footer"
 
 export default function Home() {
   return (
-    <main className={`min-h-screen`}>
-     <Navbar/>
-     <Cover/>
-     <Carrosel/>
-     <Resultados/>
-     <Eventos/>
-     <MentoriasCapacitacoes/>
-     <NossaRede/>
-    </main>
+    <>
+      <header>
+        <Navbar paginaAtiva="Home" />
+      </header>
+
+      <main className={`min-h-screen`}>
+        <Cover />
+        <Carrosel />
+        <Resultados />
+        <Eventos />
+        <MentoriasCapacitacoes />
+        <NossaRede />
+        <Depoimentos />
+        <Contato />
+
+      </main>
+      <Footer />
+    </>
   )
 }
