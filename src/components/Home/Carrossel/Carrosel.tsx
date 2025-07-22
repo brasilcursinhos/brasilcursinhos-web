@@ -39,9 +39,9 @@ export default function Carrosel() {
     }, [api])
     return (
         <div className={`px-6 py-10 max-w-7xl mx-auto`}>
-            <div className={`grid md:grid-cols-2 gap-8 items-center`}>
+            <div className={`grid lg:grid-cols-5 gap-8 items-center`}>
 
-                <div>
+                <div className="lg:col-span-3">
                     <h3 className={`text-[#E16919] font-semibold text-2xl mb-2`}>
                         Quem somos
                     </h3>
@@ -74,42 +74,41 @@ export default function Carrosel() {
                     </div>
                 </div>
 
-                <div className="flex flex-col items-center">
-                    <div className="flex flex-col items-center">
-                        <Carousel
-                            setApi={setApi}
-                            className="w-full max-w-xs sm:max-w-md"
-                            opts={{ loop: true }}
-                        >
-                            <CarouselContent>
-                                {imagens.map((img, index) => (
-                                    <CarouselItem key={index}>
-                                        <div className="relative w-full aspect-[4/3]">
-                                            <Image
-                                                src={img}
-                                                alt={`Imagem ${index + 1}`}
-                                                fill
-                                                className="rounded-lg object-cover"
-                                            />
-                                        </div>
-                                    </CarouselItem>
-                                ))}
-                            </CarouselContent>
 
-                            <CarouselPrevious className="left-2 top-1/2 -translate-y-1/2 bg-white text-black p-2 rounded-full" />
-                            <CarouselNext className="right-2 top-1/2 -translate-y-1/2 bg-white text-black p-2 rounded-full" />
-                        </Carousel>
+                <div className="lg:col-span-2 flex flex-col items-center">
+                    <Carousel
+                        setApi={setApi}
+                        className="w-full"
+                        opts={{ loop: true }}
+                    >
+                        <CarouselContent>
+                            {imagens.map((img, index) => (
+                                <CarouselItem key={index}>
+                                    <div className="relative w-full aspect-[10/7]">
+                                        <Image
+                                            src={img}
+                                            alt={`Imagem ${index + 1}`}
+                                            fill
+                                            className="rounded-lg object-cover"
+                                        />
+                                    </div>
+                                </CarouselItem>
+                            ))}
+                        </CarouselContent>
 
-                        <div className="mt-4 text-[#109DAD] font-semibold">
-                            <div className="flex gap-1 px-2 items-center">
-                                <Image
-                                    src={image_carrosel}
-                                    alt="Ícone carrossel"
-                                    width={20}
-                                    height={20}
-                                />
-                                {current} DE {count}
-                            </div>
+                        <CarouselPrevious className="left-2 top-1/2 -translate-y-1/2 bg-white text-black p-2 rounded-full" />
+                        <CarouselNext className="right-2 top-1/2 -translate-y-1/2 bg-white text-black p-2 rounded-full" />
+                    </Carousel>
+
+                    <div className="mt-4 text-[#109DAD] font-semibold">
+                        <div className="flex gap-1 px-2 items-center">
+                            <Image
+                                src={image_carrosel}
+                                alt="Ícone carrossel"
+                                width={20}
+                                height={20}
+                            />
+                            {current} DE {count}
                         </div>
                     </div>
                 </div>
