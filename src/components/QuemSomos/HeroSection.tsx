@@ -16,8 +16,8 @@ export function HeroSection() {
     );
 
     const actionButtons = (
-        <Button variant="outline" size="lg" className="border-cyan-600 text-cyan-600 hover:bg-cyan-50 hover:text-cyan-700">
-      <Download className="mr-2 h-5 w-5" />
+        <Button variant="outline" size="lg" className="border-cyan-600 text-cyan-600 hover:bg-cyan-50 hover:text-cyan-700 cursor-pointer">
+      <Download className="mr-2 h-5 w-5 " />
       Baixar nossa apresentação institucional
     </Button>
     );
