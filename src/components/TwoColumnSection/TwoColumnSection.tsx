@@ -2,11 +2,12 @@ import React from "react";
 
 interface TwoColumnSectionProps {
   title: string;
-  description: string;
+  description: React.ReactNode;
   visualContent: React.ReactNode;
   actions?: React.ReactNode;
   reverseOrder?: boolean;
   className?: string;
+  eyebrow?: string;
 }
 
 export function TwoColumnSection({
@@ -33,9 +34,9 @@ export function TwoColumnSection({
           <h1 className="text-4xl font-bold leading-tight text-[#3D4C62] mb-4">
             <span dangerouslySetInnerHTML={{ __html: title }} />
           </h1>
-          <p className="mt-4 text-[#5F7691]">
-            <span dangerouslySetInnerHTML={{ __html: description }} />
-          </p>
+          <div className="mt-4 text-[#5F7691]">
+            {description}
+          </div>
 
           {actions && <div className="mt-6">{actions}</div>}
         </div>
