@@ -16,7 +16,7 @@ export default function Home() {
         <Navbar paginaAtiva="Home" />
       </header>
 
-      <main className={`min-h-screen`}>
+      <main className={`min-h-screen w-full`}>
         <Cover />
         <Carrosel />
         <Resultados />
