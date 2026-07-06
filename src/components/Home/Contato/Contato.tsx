@@ -42,7 +42,7 @@ export default function Contato() {
           Vem conversar com a gente!
         </h1>
         <p className="text-[#5F7691] mb-6">
-          A Fernanda ou o João, nossos presidentes, vão responder sua mensagem. Tire suas dúvidas ou marque uma conversa com eles.
+          Mande uma mensagem de email diretamente para a nossa gestão, ficaremos muito felizes com o contato.
         </p>
 
         <AlertDialog>
