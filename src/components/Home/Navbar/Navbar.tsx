@@ -43,7 +43,7 @@ export default function Navbar({ paginaAtiva }: NavbarProps) {
       <Logo />
 
       <Menubar className="flex items-center px-20 gap-10 text-gray-700 bg-transparent border-none shadow-none">
-        <Link href="/QuemSomos" className={quemSomosClasses}>
+        <Link href="#" className={quemSomosClasses}>
           Quem somos
         </Link>
 
@@ -56,15 +56,15 @@ export default function Navbar({ paginaAtiva }: NavbarProps) {
           </MenubarTrigger>
           <MenubarContent className="bg-[#EEF9FA] border-none shadow-lg min-w-[12rem]">
             <MenubarItem asChild>
-              <Link href="/Eventos" className="px-4 py-2 hover:bg-gray-100">Eventos</Link>
+              <Link href="#" className="px-4 py-2 hover:bg-gray-100">Eventos</Link>
             </MenubarItem>
             <MenubarItem asChild>
-              <Link href="/Mentorias" className="px-4 py-2 hover:bg-gray-100">Mentorias e capacitações</Link>
+              <Link href="#" className="px-4 py-2 hover:bg-gray-100">Mentorias e capacitações</Link>
             </MenubarItem>
           </MenubarContent>
         </MenubarMenu>
 
-        <Link href="/Rede" className="hover:text-[#109DAD] transition-colors">
+        <Link href="#" className="hover:text-[#109DAD] transition-colors">
           Nossa rede
         </Link>
 
@@ -77,13 +77,17 @@ export default function Navbar({ paginaAtiva }: NavbarProps) {
           </MenubarTrigger>
           <MenubarContent className="bg-[#EEF9FA] border-none shadow-lg min-w-[12rem]">
             <MenubarItem asChild>
-              <Link href="/processo-filiacao" className="cursor-pointer">Processo de filiação</Link>
+              <Link href="#" className="cursor-pointer">Processo de filiação</Link>
             </MenubarItem>
             <MenubarItem asChild>
-              <Link href="/processo-voluntariado" className="cursor-pointer">Processo de voluntariado</Link>
+              <Link href="#" className="cursor-pointer">Processo de voluntariado</Link>
             </MenubarItem>
           </MenubarContent>
         </MenubarMenu>
+
+        <Link href="/transparencia" className="hover:text-[#109DAD] transition-colors">
+          Transparência
+        </Link>
       </Menubar>
     </nav>
   )
