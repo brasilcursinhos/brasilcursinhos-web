@@ -65,13 +65,6 @@ export default function Carrosel() {
                             <span>Nosso objetivo é alcançar uma educação superior cada vez mais plural, inclusiva e democrática.</span>
                         </li>
                     </ul>
-                    <div className={`mt-6`}>
-                        <Link href="/QuemSomos">
-                            <button className={`bg-[#109DAD] text-white px-6 py-2 rounded-lg cursor-pointer`}>
-                                Conheça mais sobre a gente
-                            </button>
-                        </Link>
-                    </div>
                 </div>
 
 
