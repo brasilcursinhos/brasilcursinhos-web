@@ -20,7 +20,7 @@ export default function Home() {
         <Cover />
         <Carrosel />
         <Resultados />
-        {/* <Eventos /> */}
+        <Eventos />
         <MentoriasCapacitacoes />
         <NossaRede />
         <Depoimentos />

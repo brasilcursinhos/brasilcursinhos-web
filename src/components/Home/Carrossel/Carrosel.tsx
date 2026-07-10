@@ -3,10 +3,10 @@
 import Link from "next/link"
 import Image from "next/image"
 import check from "../Assets/imagens/carrosel/check.svg"
-import union from "../Assets/imagens/carrosel/union.svg"
-import union2 from "../Assets/imagens/carrosel/union2.svg"
-import union3 from "../Assets/imagens/carrosel/union3.svg"
-import union4 from "../Assets/imagens/carrosel/union4.svg"
+import union from "../Assets/imagens/carrosel/union.jpg"
+import union2 from "../Assets/imagens/carrosel/union2.jpg"
+import union3 from "../Assets/imagens/carrosel/union3.jpg"
+import union4 from "../Assets/imagens/carrosel/union4.png"
 import image_carrosel from "../Assets/imagens/carrosel/image_carrosel.svg"
 import { useState, useEffect } from "react";
 
@@ -65,13 +65,7 @@ export default function Carrosel() {
                             <span>Nosso objetivo é alcançar uma educação superior cada vez mais plural, inclusiva e democrática.</span>
                         </li>
                     </ul>
-                    <div className={`mt-6`}>
-                        <Link href="/QuemSomos">
-                            <button className={`bg-[#109DAD] text-white px-6 py-2 rounded-lg cursor-pointer`}>
-                                Conheça mais sobre a gente
-                            </button>
-                        </Link>
-                    </div>
+                    
                 </div>
 
 

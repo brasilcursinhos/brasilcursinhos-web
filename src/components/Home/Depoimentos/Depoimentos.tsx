@@ -36,14 +36,14 @@ export default function Depoimentos () {
                 <div className="mb-8">
                     <h1 className="text-lg text-[#109DAD] font-medium">Depoimentos</h1>
                     <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-[#3D4C62]">O que estão dizendo sobre nós</h2>
-                    <div className="flex gap-4">
+                    {/*<div className="flex gap-4">
                         <button className="bg-[#109DAD] text-[#FFFFFF] px-4 py-2 rounded-xl text-sm font-semibold cursor-pointer">
                             Voluntários
                         </button>
                         <button className="bg-[#109DAD] text-[#FFFFFF] px-4 py-2 rounded-xl text-sm font-semibold cursor-pointer">
                             Filiados
                         </button>
-                    </div>
+                    </div>*/}
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
@@ -63,7 +63,7 @@ export default function Depoimentos () {
                 </div>
                 </div>
         </section>
-        <Parceiros/>
+        {/*<Parceiros/>*/}
         </>
     )
 }
