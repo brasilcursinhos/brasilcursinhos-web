@@ -1,10 +1,20 @@
-import Imagem1 from "../Assets/imagens/depoimentos/juliana.svg"
-import Imagem2 from "../Assets/imagens/depoimentos/joao.svg"
-import Imagem3 from "../Assets/imagens/depoimentos/gabriela.svg"
+// import Imagem1 from "../Assets/imagens/depoimentos/juliana.svg"
+// import Imagem2 from "../Assets/imagens/depoimentos/joao.svg"
+// import Imagem3 from "../Assets/imagens/depoimentos/gabriela.svg"
+import ImagemFernanda from "./fernanda.png"
 import Icone from "../Assets/imagens/depoimentos/icone.svg"
 import Image from "next/image"
 import Parceiros from "../Parceiros/Parceiros"
+
 const depoimento = [
+    {
+        descricao: "Minha primeira experiência com a Brasil Cursinhos foi no EDL (Encontro de Líderes) de 2019 e desde então já sabia que eu gostaria de fazer parte da BC um dia! Ingressei de fato em 2021, como diretora de Gestão de Pessoas e no ano seguinte me tornei Presidente Organizacional, até agosto de 2023. Foram anos de muuuitas trocas, muitos aprendizados e contato com pessoas de diversos locais do pais! Fiz parte de uma equipe com pessoas que realmente queriam fazer a diferença de alguma forma. Um verdadeiro encontro cultural e de diferentes realidades que foi muitíssimo importante para minha trajetória pessoal e profissional. Agora, fazer parte da BC enquanto conselheira é uma forma de continuar acompanhando o trabalho gigante e necessário da galera que faz parte do movimento de cursinhos universitários populares!",
+        autor: "Fernanda",
+        imagem_autor: ImagemFernanda,
+        icone: Icone,
+        cargo_autor: "Presidente",
+    },
+    /* 
     {
         descricao: "Entrei na Brasil Cursinhos em 2017 e desde lá aprendi muito, conheci pessoas maravilhosas e fiz amigos que vou levar para a vida toda e consigo ver com muita facilidade todo o meu crescimento durante esse tempo.",
         autor: "Juliana Ferreira",
@@ -26,6 +36,7 @@ const depoimento = [
         icone: Icone,
         cargo_autor: "Assessora de Expansão",
     }
+    */
 ]
 
 export default function Depoimentos () {
@@ -47,15 +58,15 @@ export default function Depoimentos () {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
-                    {depoimento.map((depoimento, index) => (
+                    {depoimento.map((depoimentoItem, index) => (
                         <div key={index} className="bg-white text-[#003A4D] rounded-lg shadow-md p-6 flex flex-col justify-between h-full">
-                            <Image src={depoimento.icone} alt="Icone" className="w-6 h-6 mb-4" />
-                            <p className="text-sm text-[#6B7188] mb-6">{depoimento.descricao}</p>
+                            <Image src={depoimentoItem.icone} alt="Icone" className="w-6 h-6 mb-4" />
+                            <p className="text-sm text-[#6B7188] mb-6">{depoimentoItem.descricao}</p>
                             <div className="flex items-center gap-3 mt-auto">
-                                <Image src={depoimento.imagem_autor} alt="Foto do autor" className="w-10 h-10 rounded-full object-cover" />
+                                <Image src={depoimentoItem.imagem_autor} alt={`Foto de ${depoimentoItem.autor}`} className="w-10 h-10 rounded-full object-cover" />
                             <div>
-                            <p className="text-sm text-[#3D4C62] font-semibold">{depoimento.autor}</p>
-                            <p className="text-xs text-[#5F7691]">{depoimento.cargo_autor}</p>
+                            <p className="text-sm text-[#3D4C62] font-semibold">{depoimentoItem.autor}</p>
+                            <p className="text-xs text-[#5F7691]">{depoimentoItem.cargo_autor}</p>
                         </div>
                         </div>
                         </div>
