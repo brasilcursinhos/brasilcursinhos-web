@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import Evento1 from "../Assets/imagens/eventos/evento1.jpeg";
 import Evento2 from "../Assets/imagens/eventos/evento2.svg";
 import Evento3 from "../Assets/imagens/eventos/evento3.svg";
@@ -21,7 +22,8 @@ const eventos = [
     imagem: Evento1,
     titulo: "ENCUP 2026",
     data: "15 e 16 de agosto de 2026",
-    local: "FGV - São Paulo/SP"
+    local: "FGV - São Paulo/SP",
+    link: "https://eventos.brasilcursinhos.org/encup"
   }/*,
   {
     imagem: Evento4,
@@ -57,9 +59,11 @@ export default function Eventos() {
                   <p className="text-sm text-[#5F7691] ">{evento.data}</p>
                   <p className="text-sm text-[#5F7691]">{evento.local}</p>
                 </div>
+                <Link href={evento.link}>
                 <button className="mt-4 border border-[#109DAD] text-[#109DAD] px-3 py-1 rounded text-sm cursor-pointer">
                   Ver detalhes
                 </button>
+                </Link>
               </div>
             </div>
           ))}
