@@ -65,13 +65,7 @@ export default function Carrosel() {
                             <span>Nosso objetivo é alcançar uma educação superior cada vez mais plural, inclusiva e democrática.</span>
                         </li>
                     </ul>
-<<<<<<< HEAD
-=======
-                    
->>>>>>> main
                 </div>
-
-
                 <div className="lg:col-span-2 flex flex-col items-center">
                     <Carousel
                         setApi={setApi}
