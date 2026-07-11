@@ -16,11 +16,12 @@ interface NavbarProps {
 }
 
 export default function Navbar({ paginaAtiva }: NavbarProps) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const quemSomosClasses = `
       hover:text-[#109DAD]
       transition-colors
-      pb-1 /* Adiciona um pouco de espaço para a borda não ficar colada */
+      pb-1
       ${paginaAtiva === 'quem-somos'
       ? `
             text-[#109DAD] font-bold
@@ -29,9 +30,9 @@ export default function Navbar({ paginaAtiva }: NavbarProps) {
             after:absolute
             after:left-1/2
             after:-translate-x-1/2
-            after:bottom-[-1px] /* Posiciona sobre a borda pontilhada */
-            after:h-[2px] /* Espessura da linha sólida */
-            after:w-[40%]   /* Largura da linha sólida (ajuste conforme o gosto) */
+            after:bottom-[-1px]
+            after:h-[2px]
+            after:w-[40%]
             after:bg-[#109DAD]
           `
       : ''
@@ -39,8 +40,9 @@ export default function Navbar({ paginaAtiva }: NavbarProps) {
     `;
 
   return (
-    <nav className="flex items-center justify-between p-4 bg-[#EEF9FA]">
+    <nav className="relative flex items-center justify-between p-4 bg-[#EEF9FA]">
       <Logo />
+
 
       <Menubar className="flex items-center px-20 gap-10 text-gray-700 bg-transparent border-none shadow-none">
         <Link href="#" className={quemSomosClasses}>
@@ -48,9 +50,9 @@ export default function Navbar({ paginaAtiva }: NavbarProps) {
         </Link>
 
         <MenubarMenu>
-          <MenubarTrigger className="hover:text-[#109DAD] transition-colors flex items-center gap-1 cursor-pointer data-[state=open]:text-[#109DAD]">
+          <MenubarTrigger className="hover:text-[#109DAD] transition-colors flex items-center gap-1 cursor-pointer data-[state=open]:text-[#109DAD] p-0">
             O que oferecemos
-            <svg className="w-4 h-4 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-4 h-4 mt-1 fill-red-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
             </svg>
           </MenubarTrigger>
@@ -69,7 +71,7 @@ export default function Navbar({ paginaAtiva }: NavbarProps) {
         </Link>
 
         <MenubarMenu>
-          <MenubarTrigger className="hover:text-[#109DAD] transition-colors flex items-center gap-1 cursor-pointer data-[state=open]:text-[#109DAD]">
+          <MenubarTrigger className="hover:text-[#109DAD] transition-colors flex items-center gap-1 cursor-pointer data-[state=open]:text-[#109DAD] p-0">
             Faça parte
             <svg className="w-4 h-4 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -89,6 +91,66 @@ export default function Navbar({ paginaAtiva }: NavbarProps) {
           Transparência
         </Link>
       </Menubar>
+
+      {/* Menu Mobile */}
+      <button className="md:hidden p-2 group hover:bg-gray-200 rounded-lg transition-colors"
+        onClick={() => setIsMenuOpen(!isMenuOpen)}>
+        <svg className="w-6 h-6 text-gray-700 group-hover:text-[#109DAD] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+
+      {/* Mobile Menu Dropdown */}
+      {isMenuOpen && (
+        <div className="absolute top-full left-0 right-0 z-50 bg-[#EEF9FA] border-b border-gray-200 shadow-lg md:hidden">
+          <div className="flex flex-col p-4 space-y-3">
+            <Link href="/QuemSomos"  className="hover:text-[#109DAD] transition-colors text-sm py-2" onClick={() => setIsMenuOpen(false)}>
+              Quem somos
+            </Link>
+            <div className="border-t pt-2">
+              <p className="text-xs font-semibold text-gray-500 mb-2">O que oferecemos</p>
+              <Link 
+                href="/Eventos" 
+                className="block hover:text-[#109DAD] transition-colors text-sm py-1 pl-2"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Eventos
+              </Link>
+              <Link 
+                href="/Mentorias" 
+                className="block hover:text-[#109DAD] transition-colors text-sm py-1 pl-2"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Mentorias e capacitações
+              </Link>
+            </div>
+            <Link 
+              href="/Rede" 
+              className="hover:text-[#109DAD] transition-colors text-sm py-2"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Nossa rede
+            </Link>
+            <div className="border-t pt-2">
+              <p className="text-xs font-semibold text-gray-500 mb-2">Faça parte</p>
+              <Link 
+                href="/processo-filiacao" 
+                className="block hover:text-[#109DAD] transition-colors text-sm py-1 pl-2"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Processo de filiação
+              </Link>
+              <Link 
+                href="/processo-voluntariado" 
+                className="block hover:text-[#109DAD] transition-colors text-sm py-1 pl-2"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Processo de voluntariado
+              </Link>
+            </div>
+          </div>
+        </div>
+      )}
     </nav>
   )
 }

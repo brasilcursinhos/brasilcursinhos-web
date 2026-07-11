@@ -1,11 +1,12 @@
 import Image from "next/image";
-import Evento1 from "../Assets/imagens/eventos/evento1.svg";
+import Link from "next/link";
+import Evento1 from "../Assets/imagens/eventos/evento1.jpeg";
 import Evento2 from "../Assets/imagens/eventos/evento2.svg";
 import Evento3 from "../Assets/imagens/eventos/evento3.svg";
 import Evento4 from "../Assets/imagens/eventos/evento4.svg";
 
 const eventos = [
-  {
+  /*{
     imagem: Evento1,
     titulo: "InovaCUP 2022",
     data: "21 e 22 de maio de 2022",
@@ -16,19 +17,20 @@ const eventos = [
     titulo: "EFOL 2021",
     data: "4 e 5 de dezembro de 2021",
     local: "São Paulo, SP"
-  },
+  },*/
   {
-    imagem: Evento3,
-    titulo: "ENCUP 2021",
-    data: "15 a 17 de outubro de 2021",
-    local: "Evento online"
-  },
+    imagem: Evento1,
+    titulo: "ENCUP 2026",
+    data: "15 e 16 de agosto de 2026",
+    local: "FGV - São Paulo/SP",
+    link: "https://eventos.brasilcursinhos.org/encup"
+  }/*,
   {
     imagem: Evento4,
     titulo: "EDL 2020",
     data: "7 a 9 de fevereiro de 2020",
     local: "São Paulo, SP"
-  },
+  },*/
 ]
 
 export default function Eventos() {
@@ -42,9 +44,9 @@ export default function Eventos() {
               Facilitamos a conexão entre cursinhos por todo o Brasil
             </h2>
           </div>
-          <button className="bg-[#109DAD] text-[#FFFFFF] px-4 py-2 rounded-md text-sm font-semibold cursor-pointer">
+          {/*<button className="bg-[#109DAD] text-[#FFFFFF] px-4 py-2 rounded-md text-sm font-semibold cursor-pointer">
             Veja todos os eventos
-          </button>
+          </button>*/}
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -57,9 +59,11 @@ export default function Eventos() {
                   <p className="text-sm text-[#5F7691] ">{evento.data}</p>
                   <p className="text-sm text-[#5F7691]">{evento.local}</p>
                 </div>
+                <Link href={evento.link}>
                 <button className="mt-4 border border-[#109DAD] text-[#109DAD] px-3 py-1 rounded text-sm cursor-pointer">
                   Ver detalhes
                 </button>
+                </Link>
               </div>
             </div>
           ))}

@@ -10,7 +10,7 @@ import Youtube from '../Assets/imagens/footer/youtube.svg'
 export default function Footer() {
   return (
     <footer className="bg-[#EEF9FA]">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-8 text-sm text-gray-700 ">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 p-10 md:grid-cols-5 gap-8 text-sm text-gray-700 ">
         
         <div className="mt-5">
           <Logo/>
