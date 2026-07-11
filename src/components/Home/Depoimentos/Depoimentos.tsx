@@ -1,7 +1,7 @@
 // import Imagem1 from "../Assets/imagens/depoimentos/juliana.svg"
 // import Imagem2 from "../Assets/imagens/depoimentos/joao.svg"
 // import Imagem3 from "../Assets/imagens/depoimentos/gabriela.svg"
-import ImagemFernanda from "./fernanda.png"
+import ImagemFernanda from "../Assets/imagens/depoimentos/fernanda.png"
 import Icone from "../Assets/imagens/depoimentos/icone.svg"
 import Image from "next/image"
 import Parceiros from "../Parceiros/Parceiros"
