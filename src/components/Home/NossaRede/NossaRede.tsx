@@ -1,7 +1,9 @@
-'use client'
+'use client';
 
 import Link from "next/link";
 import Image from "next/image";
+import { useState } from "react";
+
 import logo1 from "../Assets/imagens/nossa-rede/1.png";
 import logo2 from "../Assets/imagens/nossa-rede/2.png";
 import logo3 from "../Assets/imagens/nossa-rede/3.png";
@@ -30,14 +32,11 @@ import logo25 from "../Assets/imagens/nossa-rede/25.png";
 import logo26 from "../Assets/imagens/nossa-rede/26.png";
 import logo27 from "../Assets/imagens/nossa-rede/27.png";
 import logo28 from "../Assets/imagens/nossa-rede/28.png";
-import logo29 from "../Assets/imagens/nossa-rede/29.png";
-
-
-
-import { useState } from "react";
 
 const logos = [
-    logo1, logo2, logo3, logo4, logo5, logo6, logo7, logo8, logo9, logo10, logo11, logo12, logo13, logo14, logo15, logo16, logo17, logo18, logo19, logo20, logo21, logo22, logo23, logo24, logo25, logo26, logo27, logo28, logo29
+    logo1, logo2, logo3, logo4, logo5, logo6, logo7, logo8, logo9, logo10, 
+    logo11, logo12, logo13, logo14, logo15, logo16, logo17, logo18, logo19, 
+    logo20, logo21, logo22, logo23, logo24, logo25, logo26, logo27, logo28
 ];
     
 const logosPorPagina = 4;
@@ -51,17 +50,16 @@ export default function NossaRede() {
         paginaAtual * logosPorPagina + logosPorPagina
     );
 
-      const paginaAnterior = () => {
+    const paginaAnterior = () => {
         if (paginaAtual > 0){
             setPaginaAtual(paginaAtual - 1);
         }
     }
 
     const proximaPagina = () => {
-        if (paginaAtual < totalPaginas -1){
+        if (paginaAtual < totalPaginas - 1){
             setPaginaAtual(paginaAtual + 1);  
         }
-        
     }
 
     return (
@@ -87,7 +85,7 @@ export default function NossaRede() {
                         <div key={index} className="flex items-center justify-center h-20">
                             <Image
                                 src={logo}
-                                alt={`Logo ${index}`}
+                                alt={`Logo ${index + 1}`}
                                 width={120}
                                 height={60}
                                 className="object-contain mb-10"
@@ -102,7 +100,7 @@ export default function NossaRede() {
                     </span>
                     <button
                         onClick={paginaAnterior}
-                        className="w-8 h-8 flex items-center justify-center rounded-full bg-white border border-[#ccc] text-black cursor-pointer"
+                        className="w-8 h-8 flex items-center justify-center rounded-full bg-white border border-[#ccc] text-black cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
                         disabled={paginaAtual === 0}
                     >
                         {"<"}
@@ -110,7 +108,7 @@ export default function NossaRede() {
 
                     <button
                         onClick={proximaPagina}
-                        className="w-8 h-8 flex items-center justify-center rounded-full bg-[#109DAD] text-white cursor-pointer"
+                        className="w-8 h-8 flex items-center justify-center rounded-full bg-[#109DAD] text-white cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
                         disabled={paginaAtual === totalPaginas - 1}
                     >
                         {">"}
