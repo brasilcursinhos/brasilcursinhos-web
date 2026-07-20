@@ -2,6 +2,7 @@
 // import Imagem2 from "../Assets/imagens/depoimentos/joao.svg"
 // import Imagem3 from "../Assets/imagens/depoimentos/gabriela.svg"
 import ImagemFernanda from "../Assets/imagens/depoimentos/fernanda.png"
+import ImagemJuliana from "../Assets/imagens/depoimentos/juliana.png"
 import Icone from "../Assets/imagens/depoimentos/icone.svg"
 import Image from "next/image"
 import Parceiros from "../Parceiros/Parceiros"
@@ -14,6 +15,14 @@ const depoimento = [
         icone: Icone,
         cargo_autor: "Presidente",
     },
+    {
+        descricao: "Entrei na Brasil Cursinhos em 2021, buscando ajudar com conhecimento técnico a causa que acho a mais transformadora de todas: EDUCAÇÃO. De quebra conheci mtas pessoas queridas e histórias incríveis, que reforçam minha crença de que havendo oportunidades, vidas se transformam",
+        autor: "Juliana",
+        imagem_autor: ImagemJuliana,
+        icone: Icone,
+        cargo_autor: "Diretora do Financeiro",
+    },
+
     /* 
     {
         descricao: "Entrei na Brasil Cursinhos em 2017 e desde lá aprendi muito, conheci pessoas maravilhosas e fiz amigos que vou levar para a vida toda e consigo ver com muita facilidade todo o meu crescimento durante esse tempo.",
