@@ -7,6 +7,7 @@ import MentoriasCapacitacoes from "@/components/Home/MentoriasCapacitacoes/Mento
 import NossaRede from "@/components/Home/NossaRede/NossaRede"
 import Depoimentos from "@/components/Home/Depoimentos/Depoimentos"
 import Contato from "@/components/Home/Contato/Contato"
+import Parceiros from "@/components/Home/Parceiros/Parceiros"
 import Footer from "@/components/Home/Footer/Footer"
 
 export default function Home() {
@@ -24,6 +25,7 @@ export default function Home() {
         <MentoriasCapacitacoes />
         <NossaRede />
         <Depoimentos />
+        <Parceiros />
         <Contato />
 
       </main>

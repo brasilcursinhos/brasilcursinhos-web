@@ -16,7 +16,7 @@ const depoimento = [
         cargo_autor: "Presidente",
     },
     {
-        descricao: "Entrei na Brasil Cursinhos em 2021, buscando ajudar com conhecimento técnico a causa que acho a mais transformadora de todas: EDUCAÇÃO. De quebra conheci mtas pessoas queridas e histórias incríveis, que reforçam minha crença de que havendo oportunidades, vidas se transformam",
+        descricao: "Entrei na Brasil Cursinhos em 2021, buscando ajudar com conhecimento técnico a causa que acho a mais transformadora de todas: EDUCAÇÃO. De quebra conheci muitas pessoas queridas e histórias incríveis, que reforçam minha crença de que havendo oportunidades, vidas se transformam",
         autor: "Juliana",
         imagem_autor: ImagemJuliana,
         icone: Icone,

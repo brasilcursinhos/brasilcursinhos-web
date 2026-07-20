@@ -87,8 +87,8 @@ export default function Carrosel() {
                             ))}
                         </CarouselContent>
 
-                        <CarouselPrevious className="left-2 top-1/2 -translate-y-1/2 bg-white text-black p-2 rounded-full" />
-                        <CarouselNext className="right-2 top-1/2 -translate-y-1/2 bg-white text-black p-2 rounded-full" />
+                        <CarouselPrevious className="left-2 top-1/2 -translate-y-1/2 h-10 w-10 rounded-full border border-[#cfd8dc] bg-white text-[#3D4C62] shadow-sm transition-all duration-200 hover:bg-[#109DAD] hover:text-white active:bg-[#109DAD] active:text-white" />
+                        <CarouselNext className="right-2 top-1/2 -translate-y-1/2 h-10 w-10 rounded-full border border-[#cfd8dc] bg-white text-[#3D4C62] shadow-sm transition-all duration-200 hover:bg-[#109DAD] hover:text-white active:bg-[#109DAD] active:text-white" />
                     </Carousel>
 
                     <div className="mt-4 text-[#109DAD] font-semibold">
