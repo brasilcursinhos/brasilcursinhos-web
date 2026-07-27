@@ -43,8 +43,7 @@ export default function Navbar({ paginaAtiva }: NavbarProps) {
     <nav className="relative flex items-center justify-between p-4 bg-[#EEF9FA]">
       <Logo />
 
-
-      <Menubar className="flex items-center px-20 gap-10 text-gray-700 bg-transparent border-none shadow-none">
+      <Menubar className="hidden md:flex items-center px-6 md:px-20 gap-10 text-gray-700 bg-transparent border-none shadow-none">
         <Link href="#" className={quemSomosClasses}>
           Quem somos
         </Link>
@@ -93,11 +92,21 @@ export default function Navbar({ paginaAtiva }: NavbarProps) {
       </Menubar>
 
       {/* Menu Mobile */}
-      <button className="md:hidden p-2 group hover:bg-gray-200 rounded-lg transition-colors"
-        onClick={() => setIsMenuOpen(!isMenuOpen)}>
-        <svg className="w-6 h-6 text-gray-700 group-hover:text-[#109DAD] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
+      <button
+        type="button"
+        aria-expanded={isMenuOpen}
+        className="md:hidden p-2 group hover:bg-gray-200 rounded-lg transition-colors"
+        onClick={() => setIsMenuOpen(!isMenuOpen)}
+      >
+        {isMenuOpen ? (
+          <svg className="w-6 h-6 text-gray-700 group-hover:text-[#109DAD] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        ) : (
+          <svg className="w-6 h-6 text-gray-700 group-hover:text-[#109DAD] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        )}
       </button>
 
       {/* Mobile Menu Dropdown */}
