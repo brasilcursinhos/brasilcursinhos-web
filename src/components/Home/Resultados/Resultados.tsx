@@ -15,19 +15,19 @@ export default function Resultados() {
         <div className="flex flex-col items-center">
           <Image src={icone1} alt="icone" width={40} height={40} />
           <p className="text-[#109DAD] font-bold text-lg">mais de 25</p>
-          <p className="text-sm text-[#6B7188]">cursinhos já fazem parte <br /> da nossa rede</p>
+          <p className="text-sm text-[#6B7188]">Cursinhos já fazem parte <br /> da nossa rede</p>
         </div>
 
         <div className="flex flex-col items-center">
           <Image src={icone2} alt="icone 2" width={40} height={40}/>
           <p className="text-[#109DAD] font-bold text-lg">mais de 40</p>
-          <p className="text-sm text-[#6B7188]">voluntários estão com a <br /> gente nessa</p>
+          <p className="text-sm text-[#6B7188]">Voluntários estão com a <br /> gente nessa</p>
         </div>
 
         <div className="flex flex-col items-center">
           <Image src={icone3} alt="icone3" width={40} height={40}/>
           <p className="text-[#109DAD] font-bold text-lg">mais de 4000</p>
-          <p className="text-sm text-[#6B7188]">alunos impactados pelo <br /> trabalho de toda a rede</p>
+          <p className="text-sm text-[#6B7188]">Alunos impactados pelo <br /> trabalho de toda a rede</p>
         </div>
       </div>
     </section>
