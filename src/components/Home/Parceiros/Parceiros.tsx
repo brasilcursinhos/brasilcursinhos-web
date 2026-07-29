@@ -87,19 +87,25 @@ export default function Parceiros() {
                             {paginaAtual + 1} DE {totalPaginas}
                         </span>
                         <button
+                            type="button"
                             onClick={paginaAnterior}
-                            className="w-8 h-8 flex items-center justify-center rounded-full bg-white border border-[#ccc] text-black cursor-pointer"
                             disabled={paginaAtual === 0}
+                            className={`w-10 h-10 flex items-center justify-center rounded-full border border-[#cfd8dc] bg-white text-[#3D4C62] transition-all duration-200 ${paginaAtual === 0 ? "cursor-not-allowed opacity-60" : "cursor-pointer hover:bg-[#109DAD] hover:text-white active:bg-[#109DAD] active:text-white"}`}
                         >
-                            {"<"}
+                            <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5" aria-hidden="true">
+                                <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
                         </button>
 
                         <button
+                            type="button"
                             onClick={proximaPagina}
-                            className="w-8 h-8 flex items-center justify-center rounded-full bg-[#109DAD] text-white cursor-pointer"
                             disabled={paginaAtual === totalPaginas - 1}
+                            className={`w-10 h-10 flex items-center justify-center rounded-full border border-[#cfd8dc] bg-white text-[#3D4C62] transition-all duration-200 ${paginaAtual === totalPaginas - 1 ? "cursor-not-allowed opacity-60" : "cursor-pointer hover:bg-[#109DAD] hover:text-white active:bg-[#109DAD] active:text-white"}`}
                         >
-                            {">"}
+                            <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5" aria-hidden="true">
+                                <path d="M9 6L15 12L9 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
                         </button>
                     </div>
                 </div>
