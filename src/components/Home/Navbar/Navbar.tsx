@@ -89,6 +89,9 @@ export default function Navbar({ paginaAtiva }: NavbarProps) {
         <Link href="/transparencia" className="hover:text-[#109DAD] transition-colors">
           Transparência
         </Link>
+         <Link href="https://docs.google.com/forms/d/e/1FAIpQLScStZjd7ZZCN8EohZW0LR5JraaZbGnRZvcJGh90PvZYA0GxPQ/viewform" className="hover:text-[#109DAD] transition-colors font-semibold" target="_blank" rel="noopener noreferrer">
+          Inscrição Encup 2026
+        </Link>
       </Menubar>
 
       {/* Menu Mobile */}
@@ -113,7 +116,15 @@ export default function Navbar({ paginaAtiva }: NavbarProps) {
       {isMenuOpen && (
         <div className="absolute top-full left-0 right-0 z-50 bg-[#EEF9FA] border-b border-gray-200 shadow-lg md:hidden">
           <div className="flex flex-col p-4 space-y-3">
-            <Link href="/QuemSomos"  className="hover:text-[#109DAD] transition-colors text-sm py-2" onClick={() => setIsMenuOpen(false)}>
+              <div className="border-t pt-2">
+              <Link
+                href="https://docs.google.com/forms/d/e/1FAIpQLScStZjd7ZZCN8EohZW0LR5JraaZbGnRZvcJGh90PvZYA0GxPQ/viewform"
+                className="block hover:text-[#109DAD] transition-colors text-sm py-2 font-semibold"
+                target="_blank" onClick={() => setIsMenuOpen(false)}>
+                Inscrição Encup 2026
+              </Link>
+            </div>
+            <Link href="/QuemSomos"  className="hover:text-[#109DAD] transition-colors text-sm" onClick={() => setIsMenuOpen(false)}>
               Quem somos
             </Link>
             <div className="border-t pt-2">
