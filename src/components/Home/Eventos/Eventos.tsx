@@ -23,7 +23,7 @@ const eventos = [
     titulo: "ENCUP 2026",
     data: "15 e 16 de agosto de 2026",
     local: "FGV - São Paulo/SP",
-    link: "https://eventos.brasilcursinhos.org/encup"
+    link: "https://docs.google.com/forms/d/e/1FAIpQLScStZjd7ZZCN8EohZW0LR5JraaZbGnRZvcJGh90PvZYA0GxPQ/viewform"
   }/*,
   {
     imagem: Evento4,
