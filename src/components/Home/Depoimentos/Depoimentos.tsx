@@ -13,7 +13,7 @@ const depoimento = [
         autor: "Fernanda",
         imagem_autor: ImagemFernanda,
         icone: Icone,
-        cargo_autor: "Presidente",
+        cargo_autor: "Presidente 2022/23",
     },
     {
         descricao: "Entrei na Brasil Cursinhos em 2021, buscando ajudar com conhecimento técnico a causa que acho a mais transformadora de todas: EDUCAÇÃO. De quebra conheci muitas pessoas queridas e histórias incríveis, que reforçam minha crença de que havendo oportunidades, vidas se transformam",
