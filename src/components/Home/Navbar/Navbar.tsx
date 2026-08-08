@@ -43,9 +43,8 @@ export default function Navbar({ paginaAtiva }: NavbarProps) {
     <nav className="relative flex items-center justify-between p-4 bg-[#EEF9FA]">
       <Logo />
 
-      {/* Menu Desktop */}
-      <Menubar className="hidden md:flex items-center gap-4 lg:gap-8 text-sm lg:text-base text-gray-700 bg-transparent border-none shadow-none px-4 lg:px-20">
-        <Link href="/QuemSomos" className={quemSomosClasses}>
+      <Menubar className="hidden md:flex items-center px-6 md:px-20 gap-10 text-gray-700 bg-transparent border-none shadow-none">
+        <Link href="#" className={quemSomosClasses}>
           Quem somos
         </Link>
 
@@ -58,15 +57,15 @@ export default function Navbar({ paginaAtiva }: NavbarProps) {
           </MenubarTrigger>
           <MenubarContent className="bg-[#EEF9FA] border-none shadow-lg min-w-[12rem]">
             <MenubarItem asChild>
-              <Link href="/Eventos" className="px-4 py-2 hover:bg-gray-100">Eventos</Link>
+              <Link href="#" className="px-4 py-2 hover:bg-gray-100">Eventos</Link>
             </MenubarItem>
             <MenubarItem asChild>
-              <Link href="/Mentorias" className="px-4 py-2 hover:bg-gray-100">Mentorias e capacitações</Link>
+              <Link href="#" className="px-4 py-2 hover:bg-gray-100">Mentorias e capacitações</Link>
             </MenubarItem>
           </MenubarContent>
         </MenubarMenu>
 
-        <Link href="/Rede" className="hover:text-[#109DAD] transition-colors">
+        <Link href="#" className="hover:text-[#109DAD] transition-colors">
           Nossa rede
         </Link>
 
@@ -79,28 +78,53 @@ export default function Navbar({ paginaAtiva }: NavbarProps) {
           </MenubarTrigger>
           <MenubarContent className="bg-[#EEF9FA] border-none shadow-lg min-w-[12rem]">
             <MenubarItem asChild>
-              <Link href="/processo-filiacao" className="cursor-pointer">Processo de filiação</Link>
+              <Link href="#" className="cursor-pointer">Processo de filiação</Link>
             </MenubarItem>
             <MenubarItem asChild>
-              <Link href="/processo-voluntariado" className="cursor-pointer">Processo de voluntariado</Link>
+              <Link href="#" className="cursor-pointer">Processo de voluntariado</Link>
             </MenubarItem>
           </MenubarContent>
         </MenubarMenu>
+
+        <Link href="/transparencia" className="hover:text-[#109DAD] transition-colors">
+          Transparência
+        </Link>
+         <Link href="https://docs.google.com/forms/d/e/1FAIpQLScStZjd7ZZCN8EohZW0LR5JraaZbGnRZvcJGh90PvZYA0GxPQ/viewform" className="hover:text-[#109DAD] transition-colors font-semibold" target="_blank" rel="noopener noreferrer">
+          Inscrição Encup 2026
+        </Link>
       </Menubar>
 
       {/* Menu Mobile */}
-      <button className="md:hidden p-2 group hover:bg-gray-200 rounded-lg transition-colors"
-        onClick={() => setIsMenuOpen(!isMenuOpen)}>
-        <svg className="w-6 h-6 text-gray-700 group-hover:text-[#109DAD] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
+      <button
+        type="button"
+        aria-expanded={isMenuOpen}
+        className="md:hidden p-2 group hover:bg-gray-200 rounded-lg transition-colors"
+        onClick={() => setIsMenuOpen(!isMenuOpen)}
+      >
+        {isMenuOpen ? (
+          <svg className="w-6 h-6 text-gray-700 group-hover:text-[#109DAD] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        ) : (
+          <svg className="w-6 h-6 text-gray-700 group-hover:text-[#109DAD] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        )}
       </button>
 
       {/* Mobile Menu Dropdown */}
       {isMenuOpen && (
         <div className="absolute top-full left-0 right-0 z-50 bg-[#EEF9FA] border-b border-gray-200 shadow-lg md:hidden">
           <div className="flex flex-col p-4 space-y-3">
-            <Link href="/QuemSomos"  className="hover:text-[#109DAD] transition-colors text-sm py-2" onClick={() => setIsMenuOpen(false)}>
+              <div className="border-t pt-2">
+              <Link
+                href="https://docs.google.com/forms/d/e/1FAIpQLScStZjd7ZZCN8EohZW0LR5JraaZbGnRZvcJGh90PvZYA0GxPQ/viewform"
+                className="block hover:text-[#109DAD] transition-colors text-sm py-2 font-semibold"
+                target="_blank" onClick={() => setIsMenuOpen(false)}>
+                Inscrição Encup 2026
+              </Link>
+            </div>
+            <Link href="/QuemSomos"  className="hover:text-[#109DAD] transition-colors text-sm" onClick={() => setIsMenuOpen(false)}>
               Quem somos
             </Link>
             <div className="border-t pt-2">

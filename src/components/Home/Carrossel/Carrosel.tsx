@@ -3,10 +3,10 @@
 import Link from "next/link"
 import Image from "next/image"
 import check from "../Assets/imagens/carrosel/check.svg"
-import union from "../Assets/imagens/carrosel/union.svg"
-import union2 from "../Assets/imagens/carrosel/union2.svg"
-import union3 from "../Assets/imagens/carrosel/union3.svg"
-import union4 from "../Assets/imagens/carrosel/union4.svg"
+import union from "../Assets/imagens/carrosel/union.jpg"
+import union2 from "../Assets/imagens/carrosel/union2.jpg"
+import union3 from "../Assets/imagens/carrosel/union3.jpg"
+import union4 from "../Assets/imagens/carrosel/union4.png"
 import image_carrosel from "../Assets/imagens/carrosel/image_carrosel.svg"
 import { useState, useEffect } from "react";
 
@@ -65,16 +65,7 @@ export default function Carrosel() {
                             <span>Nosso objetivo é alcançar uma educação superior cada vez mais plural, inclusiva e democrática.</span>
                         </li>
                     </ul>
-                    <div className={`mt-6`}>
-                        <Link href="/QuemSomos">
-                            <button className={`bg-[#109DAD] text-white px-6 py-2 rounded-lg cursor-pointer`}>
-                                Conheça mais sobre a gente
-                            </button>
-                        </Link>
-                    </div>
                 </div>
-
-
                 <div className="lg:col-span-2 flex flex-col items-center">
                     <Carousel
                         setApi={setApi}
@@ -96,8 +87,8 @@ export default function Carrosel() {
                             ))}
                         </CarouselContent>
 
-                        <CarouselPrevious className="left-2 top-1/2 -translate-y-1/2 bg-white text-black p-2 rounded-full" />
-                        <CarouselNext className="right-2 top-1/2 -translate-y-1/2 bg-white text-black p-2 rounded-full" />
+                        <CarouselPrevious className="left-2 top-1/2 -translate-y-1/2 h-10 w-10 rounded-full border border-[#cfd8dc] bg-white text-[#3D4C62] shadow-sm transition-all duration-200 hover:bg-[#109DAD] hover:text-white active:bg-[#109DAD] active:text-white" />
+                        <CarouselNext className="right-2 top-1/2 -translate-y-1/2 h-10 w-10 rounded-full border border-[#cfd8dc] bg-white text-[#3D4C62] shadow-sm transition-all duration-200 hover:bg-[#109DAD] hover:text-white active:bg-[#109DAD] active:text-white" />
                     </Carousel>
 
                     <div className="mt-4 text-[#109DAD] font-semibold">

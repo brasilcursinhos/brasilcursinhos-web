@@ -16,9 +16,9 @@ export default function MentoriasCapacitacoes() {
               Ajudamos a estruturar e potencializar os cursinhos
             </h2>
           </div>
-          <button className="bg-[#109DAD] text-white px-4 py-2 rounded-md text-sm font-semibold cursor-pointer">
+          {/*<button className="bg-[#109DAD] text-white px-4 py-2 rounded-md text-sm font-semibold cursor-pointer">
             Saiba mais sobre elas
-          </button>
+          </button>*/}
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
